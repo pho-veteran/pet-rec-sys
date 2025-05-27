@@ -1,501 +1,1001 @@
-UserID,Age,LivingSpace,Allergies,ActivityLevel,PreferredPetType,PastPetExperience
-1,45,Farm,No,High,Dog,No
-2,35,Farm,Yes,Low,Dog,No
-3,54,Farm,No,Low,Bird,No
-4,46,House,No,Low,Bird,Yes
-5,32,Farm,No,High,Rabbit,Yes
-6,18,Farm,No,Medium,Bird,Yes
-7,22,House,No,Medium,Bird,No
-8,48,Apartment,No,High,Dog,No
-9,32,House,No,High,Rabbit,No
-10,53,Apartment,Yes,Medium,Bird,Yes
-11,54,Apartment,Yes,Medium,Bird,Yes
-12,30,House,Yes,High,Cat,No
-13,32,House,Yes,Medium,Dog,Yes
-14,42,House,Yes,Low,Dog,No
-15,47,Farm,No,High,Dog,Yes
-16,44,Farm,Yes,Low,Cat,No
-17,25,House,Yes,Low,Bird,No
-18,23,House,Yes,Low,Rabbit,No
-19,18,Apartment,No,Low,Dog,No
-20,41,House,Yes,High,Cat,No
-21,30,Farm,Yes,Medium,Rabbit,No
-22,45,Farm,No,High,Bird,No
-23,47,House,No,Low,Cat,Yes
-24,29,Farm,No,Medium,Rabbit,No
-25,19,Apartment,Yes,High,Rabbit,Yes
-26,39,Farm,Yes,Medium,Rabbit,No
-27,60,House,Yes,Low,Dog,No
-28,42,Farm,Yes,Low,Bird,No
-29,49,Farm,No,Low,Dog,Yes
-30,49,House,No,High,Rabbit,No
-31,57,Farm,Yes,Low,Cat,Yes
-32,38,House,Yes,Low,Bird,No
-33,47,Apartment,Yes,High,Rabbit,Yes
-34,19,Farm,No,High,Rabbit,No
-35,57,House,Yes,Low,Bird,Yes
-36,37,House,No,High,Dog,Yes
-37,55,Farm,Yes,Medium,Dog,No
-38,41,House,Yes,Low,Cat,No
-39,26,House,Yes,High,Rabbit,Yes
-40,51,Farm,No,Low,Rabbit,No
-41,30,Apartment,Yes,Low,Dog,No
-42,31,House,Yes,High,Cat,Yes
-43,23,Farm,Yes,Medium,Dog,Yes
-44,32,Apartment,Yes,Medium,Dog,Yes
-45,50,Apartment,Yes,Medium,Rabbit,Yes
-46,28,Apartment,No,Medium,Rabbit,Yes
-47,19,Apartment,Yes,Low,Cat,No
-48,24,House,No,Low,Bird,Yes
-49,27,Farm,No,Low,Rabbit,No
-50,32,Apartment,Yes,High,Bird,No
-51,54,Apartment,No,High,Dog,No
-52,46,House,No,Low,Dog,Yes
-53,39,House,Yes,Low,Rabbit,No
-54,22,House,No,High,Dog,No
-55,51,House,No,Low,Dog,Yes
-56,38,Apartment,Yes,High,Dog,No
-57,21,Apartment,Yes,Low,Dog,Yes
-58,38,Farm,No,High,Rabbit,No
-59,56,House,No,Low,Dog,No
-60,27,House,Yes,Medium,Cat,No
-61,19,Apartment,No,Medium,Rabbit,No
-62,40,Apartment,Yes,High,Dog,Yes
-63,52,Apartment,Yes,Medium,Cat,Yes
-64,28,Farm,No,Low,Dog,Yes
-65,53,Farm,Yes,High,Rabbit,Yes
-66,22,Farm,No,Medium,Bird,No
-67,35,Apartment,Yes,High,Dog,No
-68,28,Farm,No,Low,Bird,Yes
-69,20,Farm,Yes,Low,Bird,Yes
-70,40,Apartment,Yes,Medium,Bird,No
-71,52,Farm,Yes,Medium,Rabbit,No
-72,28,House,Yes,Medium,Bird,No
-73,39,Apartment,Yes,Medium,Cat,No
-74,19,Apartment,No,Low,Dog,No
-75,50,House,No,Medium,Rabbit,Yes
-76,36,Farm,No,High,Bird,No
-77,52,Farm,Yes,High,Dog,No
-78,53,Farm,Yes,Low,Dog,No
-79,50,Farm,No,Medium,Cat,No
-80,18,Farm,Yes,Medium,Bird,Yes
-81,55,Farm,No,Medium,Dog,Yes
-82,25,Apartment,No,High,Dog,Yes
-83,19,Farm,Yes,Medium,Rabbit,Yes
-84,48,Apartment,Yes,Medium,Bird,No
-85,40,House,No,Low,Dog,Yes
-86,53,House,Yes,High,Cat,No
-87,19,Apartment,Yes,Medium,Dog,Yes
-88,18,Apartment,Yes,Medium,Dog,Yes
-89,22,Farm,No,Low,Dog,No
-90,26,House,Yes,High,Rabbit,Yes
-91,26,Farm,No,Low,Bird,Yes
-92,60,Farm,Yes,Medium,Dog,No
-93,25,Apartment,Yes,High,Bird,No
-94,48,Farm,Yes,High,Cat,No
-95,31,House,No,High,Dog,No
-96,23,House,No,High,Dog,Yes
-97,23,Apartment,No,Low,Dog,Yes
-98,27,Farm,Yes,Low,Dog,Yes
-99,23,Apartment,Yes,Medium,Rabbit,Yes
-100,33,Apartment,Yes,Low,Rabbit,Yes
-101,31,Apartment,Yes,Low,Bird,Yes
-102,40,Apartment,Yes,Medium,Rabbit,No
-103,26,Farm,Yes,Medium,Bird,Yes
-104,35,Apartment,No,Medium,Rabbit,Yes
-105,60,Apartment,No,High,Rabbit,No
-106,18,Apartment,Yes,High,Cat,No
-107,37,Farm,Yes,Low,Bird,Yes
-108,41,Farm,Yes,Low,Dog,No
-109,56,Apartment,No,Medium,Rabbit,No
-110,33,House,Yes,High,Cat,Yes
-111,40,House,No,Low,Bird,No
-112,18,Farm,No,Low,Rabbit,Yes
-113,45,Farm,Yes,High,Bird,No
-114,38,Farm,No,Low,Dog,Yes
-115,59,House,No,Medium,Cat,No
-116,57,Farm,Yes,High,Dog,Yes
-117,24,Farm,Yes,Low,Cat,No
-118,53,Apartment,Yes,Medium,Cat,No
-119,47,House,No,High,Cat,Yes
-120,35,Farm,No,Low,Cat,Yes
-121,56,House,No,High,Dog,No
-122,50,House,Yes,High,Rabbit,No
-123,29,Apartment,Yes,High,Cat,Yes
-124,46,Farm,No,High,Bird,No
-125,36,House,Yes,Medium,Cat,No
-126,43,House,Yes,High,Bird,No
-127,46,Farm,Yes,High,Dog,No
-128,57,Farm,No,Low,Dog,No
-129,41,House,No,Medium,Rabbit,Yes
-130,21,House,Yes,High,Cat,Yes
-131,25,Farm,No,High,Bird,Yes
-132,18,House,No,Low,Cat,Yes
-133,27,House,No,Low,Rabbit,Yes
-134,40,Farm,Yes,Medium,Rabbit,Yes
-135,30,House,Yes,Medium,Dog,No
-136,38,House,No,Low,Dog,No
-137,32,House,No,Medium,Bird,Yes
-138,26,Farm,No,High,Cat,Yes
-139,37,House,Yes,High,Rabbit,Yes
-140,48,House,Yes,High,Cat,No
-141,26,House,Yes,Medium,Dog,No
-142,29,Apartment,No,Low,Bird,Yes
-143,27,Farm,No,Low,Dog,Yes
-144,51,House,Yes,Low,Bird,Yes
-145,50,Farm,No,High,Dog,Yes
-146,58,Apartment,Yes,High,Rabbit,Yes
-147,38,House,Yes,High,Cat,No
-148,46,House,No,Medium,Cat,Yes
-149,18,Apartment,No,Medium,Rabbit,No
-150,38,Farm,No,Low,Bird,No
-151,52,Apartment,Yes,High,Bird,Yes
-152,47,House,Yes,Medium,Cat,Yes
-153,25,Apartment,Yes,Medium,Cat,No
-154,60,Farm,No,Low,Rabbit,Yes
-155,32,House,No,High,Rabbit,No
-156,22,House,Yes,Medium,Bird,Yes
-157,56,Farm,No,Low,Bird,Yes
-158,19,House,No,High,Rabbit,No
-159,19,House,Yes,High,Bird,No
-160,36,House,Yes,Low,Dog,Yes
-161,58,Farm,Yes,Low,Dog,Yes
-162,57,House,Yes,Medium,Rabbit,No
-163,34,House,No,Low,Dog,Yes
-164,46,House,No,Medium,Rabbit,No
-165,54,Farm,Yes,Low,Dog,No
-166,37,Farm,No,Low,Dog,Yes
-167,22,Farm,No,Medium,Dog,Yes
-168,23,Apartment,No,Low,Rabbit,Yes
-169,33,House,Yes,High,Dog,Yes
-170,32,House,Yes,Low,Cat,Yes
-171,20,Apartment,No,Medium,Bird,Yes
-172,58,Apartment,No,High,Bird,Yes
-173,31,House,No,Medium,Rabbit,No
-174,42,Apartment,Yes,Medium,Rabbit,Yes
-175,34,Apartment,Yes,High,Rabbit,Yes
-176,33,Farm,Yes,Low,Cat,Yes
-177,22,Farm,Yes,High,Dog,Yes
-178,32,Farm,No,Low,Bird,No
-179,47,Farm,No,Low,Dog,No
-180,43,Apartment,Yes,High,Bird,No
-181,37,Apartment,No,Low,Cat,No
-182,18,House,No,Medium,Bird,No
-183,55,Apartment,No,Low,Cat,No
-184,24,Farm,No,Medium,Bird,Yes
-185,32,Apartment,No,High,Dog,No
-186,59,House,No,High,Bird,Yes
-187,50,Farm,Yes,Low,Cat,No
-188,23,Apartment,Yes,High,Bird,Yes
-189,38,Apartment,No,High,Bird,No
-190,30,House,Yes,Medium,Cat,Yes
-191,57,Apartment,Yes,Low,Rabbit,No
-192,33,Farm,No,High,Bird,No
-193,58,Farm,No,High,Cat,Yes
-194,57,House,No,Low,Cat,No
-195,40,Apartment,Yes,High,Dog,Yes
-196,51,Apartment,No,Low,Rabbit,Yes
-197,23,House,Yes,Medium,Cat,No
-198,52,House,Yes,High,Bird,No
-199,53,House,No,High,Bird,Yes
-200,48,Apartment,No,High,Dog,No
-201,19,Apartment,No,Medium,Rabbit,Yes
-202,29,Farm,Yes,Low,Bird,No
-203,44,Farm,Yes,Medium,Bird,No
-204,49,House,No,Low,Rabbit,Yes
-205,31,House,Yes,Medium,Cat,Yes
-206,44,House,No,Medium,Cat,No
-207,56,Apartment,No,Low,Bird,No
-208,46,House,Yes,High,Cat,No
-209,27,Farm,No,High,Rabbit,Yes
-210,32,Apartment,Yes,Low,Cat,No
-211,42,Apartment,No,High,Cat,No
-212,54,Apartment,Yes,Low,Dog,No
-213,49,House,No,Low,Dog,Yes
-214,27,Apartment,No,Medium,Bird,No
-215,59,Apartment,Yes,Low,Bird,Yes
-216,21,Farm,No,High,Bird,Yes
-217,24,House,Yes,Medium,Bird,Yes
-218,18,Apartment,Yes,Low,Bird,Yes
-219,52,House,No,Medium,Cat,No
-220,20,House,No,Medium,Dog,No
-221,21,Apartment,No,High,Cat,Yes
-222,35,Apartment,Yes,Low,Rabbit,No
-223,27,House,No,Medium,Bird,No
-224,52,Farm,Yes,Medium,Rabbit,No
-225,36,Apartment,No,High,Bird,No
-226,18,House,Yes,High,Dog,No
-227,24,Farm,Yes,High,Dog,Yes
-228,41,Farm,No,Low,Dog,Yes
-229,59,House,No,Low,Bird,Yes
-230,30,Apartment,No,Low,Cat,Yes
-231,54,Apartment,No,High,Bird,Yes
-232,30,Apartment,No,Low,Dog,No
-233,40,House,No,Low,Cat,No
-234,22,Apartment,No,Low,Rabbit,Yes
-235,59,Apartment,No,Low,Cat,No
-236,49,Apartment,Yes,Medium,Dog,No
-237,60,Apartment,No,Low,Dog,Yes
-238,42,House,No,Medium,Dog,No
-239,23,Apartment,Yes,Medium,Cat,No
-240,24,Farm,Yes,High,Cat,Yes
-241,58,Apartment,Yes,High,Bird,No
-242,18,Apartment,Yes,Medium,Rabbit,Yes
-243,38,House,No,Medium,Dog,Yes
-244,51,House,No,Low,Dog,Yes
-245,29,Apartment,Yes,Low,Bird,Yes
-246,60,Apartment,Yes,High,Bird,Yes
-247,59,Farm,Yes,Low,Bird,No
-248,40,Apartment,No,High,Bird,Yes
-249,21,House,No,High,Cat,Yes
-250,34,Farm,No,High,Rabbit,No
-251,44,House,No,Low,Dog,Yes
-252,21,House,No,Medium,Bird,No
-253,26,Farm,Yes,Low,Rabbit,No
-254,28,House,Yes,Low,Rabbit,No
-255,44,Apartment,No,High,Dog,No
-256,30,House,No,Low,Rabbit,No
-257,20,House,Yes,Low,Dog,Yes
-258,21,Apartment,No,Medium,Bird,No
-259,48,Farm,Yes,Low,Cat,No
-260,55,Apartment,No,Low,Cat,No
-261,51,Farm,Yes,High,Dog,Yes
-262,29,Farm,Yes,Medium,Bird,No
-263,22,Farm,Yes,Medium,Dog,Yes
-264,28,House,Yes,High,Bird,Yes
-265,57,Apartment,No,Low,Dog,No
-266,37,House,Yes,Medium,Cat,No
-267,36,Farm,No,Low,Cat,Yes
-268,35,House,Yes,Low,Bird,No
-269,40,Farm,No,Low,Rabbit,Yes
-270,42,Apartment,Yes,Medium,Bird,No
-271,29,House,No,Low,Bird,No
-272,24,Apartment,Yes,Medium,Rabbit,Yes
-273,20,Apartment,No,Low,Rabbit,No
-274,52,House,Yes,High,Rabbit,Yes
-275,36,Apartment,No,Low,Dog,Yes
-276,53,Apartment,Yes,Low,Dog,No
-277,23,Farm,No,Medium,Dog,No
-278,42,Farm,Yes,Low,Bird,No
-279,25,House,Yes,High,Dog,Yes
-280,26,Farm,No,Low,Rabbit,No
-281,49,Farm,Yes,Medium,Dog,No
-282,23,Apartment,No,Low,Cat,No
-283,33,House,No,Low,Rabbit,Yes
-284,20,Apartment,Yes,Medium,Rabbit,Yes
-285,30,House,No,Medium,Rabbit,Yes
-286,24,Farm,No,Low,Cat,No
-287,20,Farm,No,Medium,Rabbit,Yes
-288,49,Apartment,No,Low,Dog,Yes
-289,33,Farm,No,High,Rabbit,No
-290,53,Apartment,Yes,Low,Bird,No
-291,48,Farm,No,High,Dog,Yes
-292,29,House,Yes,Medium,Rabbit,No
-293,48,Apartment,Yes,Low,Bird,Yes
-294,25,House,Yes,Low,Dog,Yes
-295,21,Farm,Yes,Low,Bird,Yes
-296,25,Apartment,No,Medium,Dog,Yes
-297,29,House,Yes,Low,Cat,No
-298,54,Apartment,Yes,Low,Rabbit,Yes
-299,59,Farm,No,Low,Cat,No
-300,27,Farm,No,High,Bird,No
-301,33,Farm,No,Medium,Bird,Yes
-302,37,House,No,Medium,Cat,No
-303,54,Farm,No,Medium,Dog,Yes
-304,21,Farm,No,High,Cat,No
-305,18,Apartment,Yes,Medium,Rabbit,Yes
-306,60,Apartment,Yes,Medium,Cat,Yes
-307,32,Apartment,Yes,High,Bird,Yes
-308,32,Apartment,No,High,Rabbit,Yes
-309,34,Farm,Yes,Medium,Cat,Yes
-310,58,Apartment,Yes,Medium,Rabbit,Yes
-311,37,House,Yes,High,Rabbit,Yes
-312,23,House,Yes,Medium,Rabbit,No
-313,37,Apartment,No,Low,Bird,No
-314,47,Farm,No,Medium,Rabbit,No
-315,39,Apartment,Yes,Low,Dog,No
-316,36,House,Yes,Medium,Cat,No
-317,50,Apartment,Yes,Low,Rabbit,Yes
-318,42,House,Yes,Medium,Rabbit,No
-319,60,House,Yes,High,Rabbit,Yes
-320,43,Apartment,Yes,High,Rabbit,No
-321,38,House,No,High,Bird,Yes
-322,55,House,No,Low,Cat,Yes
-323,35,House,Yes,High,Bird,No
-324,47,Apartment,No,Low,Dog,Yes
-325,53,Farm,Yes,Medium,Dog,Yes
-326,19,Farm,No,High,Cat,No
-327,52,Apartment,Yes,High,Bird,Yes
-328,24,Farm,Yes,High,Dog,No
-329,46,House,Yes,Low,Dog,Yes
-330,25,Apartment,Yes,Medium,Cat,Yes
-331,20,Farm,No,High,Rabbit,No
-332,42,Farm,Yes,Medium,Dog,No
-333,36,Apartment,Yes,High,Cat,No
-334,42,House,Yes,Low,Dog,No
-335,37,Apartment,Yes,Medium,Rabbit,Yes
-336,27,Apartment,Yes,High,Rabbit,No
-337,51,Farm,Yes,Medium,Bird,No
-338,42,Apartment,No,High,Rabbit,No
-339,30,Farm,No,Medium,Rabbit,Yes
-340,43,Farm,Yes,Medium,Cat,No
-341,20,House,No,Medium,Rabbit,Yes
-342,24,Apartment,Yes,Low,Cat,No
-343,57,Apartment,No,High,Cat,Yes
-344,28,Farm,No,High,Dog,Yes
-345,33,Apartment,Yes,Low,Rabbit,No
-346,49,Farm,No,Low,Cat,Yes
-347,52,Farm,Yes,Low,Rabbit,Yes
-348,42,House,No,Low,Dog,Yes
-349,46,Farm,No,Medium,Cat,No
-350,32,House,No,Low,Dog,Yes
-351,26,House,Yes,High,Cat,No
-352,28,Farm,No,Medium,Bird,Yes
-353,19,House,No,High,Dog,No
-354,30,Apartment,Yes,Medium,Dog,Yes
-355,54,House,No,High,Cat,No
-356,34,Farm,No,Medium,Bird,No
-357,47,House,No,High,Cat,Yes
-358,19,Farm,Yes,High,Dog,No
-359,24,House,Yes,Low,Cat,Yes
-360,45,Farm,No,Medium,Rabbit,No
-361,52,House,Yes,Medium,Cat,Yes
-362,35,Apartment,Yes,High,Dog,Yes
-363,25,House,No,Medium,Dog,No
-364,46,Farm,No,Low,Dog,No
-365,50,House,No,Medium,Cat,Yes
-366,25,Apartment,Yes,High,Dog,No
-367,25,Apartment,No,Medium,Bird,Yes
-368,60,Farm,No,Low,Rabbit,Yes
-369,18,Farm,Yes,Medium,Dog,No
-370,41,Farm,No,Medium,Dog,Yes
-371,37,Apartment,No,Low,Bird,No
-372,53,House,No,High,Bird,Yes
-373,42,House,No,Low,Dog,Yes
-374,54,Apartment,No,High,Dog,Yes
-375,40,Farm,Yes,Low,Rabbit,Yes
-376,36,Apartment,No,High,Rabbit,Yes
-377,33,House,No,Medium,Bird,Yes
-378,55,Apartment,No,High,Dog,No
-379,43,Farm,No,Low,Rabbit,Yes
-380,19,House,Yes,Medium,Cat,Yes
-381,44,House,No,High,Cat,Yes
-382,18,Farm,No,Medium,Dog,No
-383,58,Apartment,Yes,High,Cat,Yes
-384,48,House,No,Low,Rabbit,Yes
-385,47,House,Yes,High,Rabbit,No
-386,32,Apartment,Yes,High,Dog,Yes
-387,60,Farm,No,Low,Dog,Yes
-388,32,Farm,No,Low,Bird,No
-389,35,Farm,Yes,Low,Cat,Yes
-390,59,Farm,Yes,High,Rabbit,Yes
-391,33,Farm,No,Low,Rabbit,No
-392,27,House,Yes,Medium,Bird,No
-393,37,House,No,High,Cat,No
-394,27,Farm,No,Medium,Rabbit,Yes
-395,56,House,No,Medium,Cat,Yes
-396,27,House,No,High,Cat,No
-397,31,Apartment,Yes,Medium,Bird,No
-398,52,Farm,No,High,Dog,Yes
-399,45,Apartment,Yes,Medium,Bird,No
-400,57,Farm,Yes,High,Dog,Yes
-401,25,Farm,Yes,Medium,Cat,Yes
-402,54,Apartment,Yes,Medium,Bird,Yes
-403,35,House,No,High,Bird,Yes
-404,60,House,No,Low,Rabbit,Yes
-405,40,House,No,Medium,Dog,No
-406,23,Farm,Yes,Medium,Dog,Yes
-407,36,House,No,Medium,Cat,Yes
-408,54,House,No,Low,Rabbit,Yes
-409,40,Farm,No,Medium,Cat,No
-410,53,Farm,No,Low,Dog,Yes
-411,33,Farm,Yes,Low,Cat,Yes
-412,21,House,No,Medium,Cat,No
-413,37,Farm,No,Medium,Dog,No
-414,44,Apartment,Yes,Low,Rabbit,No
-415,38,Apartment,Yes,Low,Bird,No
-416,54,House,Yes,High,Dog,No
-417,18,Farm,No,Medium,Dog,Yes
-418,20,Apartment,Yes,Medium,Rabbit,Yes
-419,22,Farm,Yes,Low,Cat,No
-420,29,House,Yes,Medium,Bird,No
-421,32,Farm,Yes,High,Cat,Yes
-422,18,House,No,Medium,Bird,No
-423,54,House,Yes,Low,Dog,No
-424,51,House,Yes,Medium,Cat,Yes
-425,20,Apartment,No,Medium,Cat,No
-426,22,House,No,Medium,Dog,Yes
-427,49,Apartment,No,High,Cat,Yes
-428,40,House,Yes,High,Bird,No
-429,47,House,No,Low,Rabbit,No
-430,29,House,Yes,Medium,Dog,No
-431,50,Farm,No,Medium,Rabbit,No
-432,18,House,Yes,Low,Bird,Yes
-433,25,House,No,High,Rabbit,Yes
-434,53,Apartment,Yes,High,Dog,Yes
-435,50,House,No,High,Rabbit,Yes
-436,32,Farm,Yes,High,Cat,No
-437,33,House,No,High,Bird,No
-438,20,Apartment,No,Medium,Bird,Yes
-439,42,Farm,No,Medium,Dog,Yes
-440,35,Farm,Yes,Medium,Dog,No
-441,54,Farm,Yes,Low,Cat,Yes
-442,41,Apartment,Yes,High,Dog,No
-443,44,Apartment,No,High,Cat,Yes
-444,33,Farm,No,Medium,Rabbit,Yes
-445,57,Apartment,No,Medium,Rabbit,Yes
-446,57,Farm,No,Low,Rabbit,No
-447,52,Farm,Yes,High,Cat,Yes
-448,24,Farm,Yes,High,Dog,Yes
-449,19,House,No,High,Dog,No
-450,32,House,Yes,High,Cat,Yes
-451,49,Farm,Yes,High,Cat,No
-452,39,House,No,Medium,Rabbit,No
-453,29,House,Yes,High,Rabbit,No
-454,56,Apartment,Yes,High,Bird,Yes
-455,31,House,Yes,High,Bird,No
-456,53,House,No,High,Dog,No
-457,51,House,Yes,Medium,Cat,Yes
-458,44,Apartment,Yes,Medium,Dog,No
-459,48,House,No,High,Rabbit,No
-460,51,House,No,Medium,Bird,Yes
-461,38,House,No,Medium,Rabbit,Yes
-462,52,House,Yes,Medium,Dog,Yes
-463,32,Farm,Yes,Medium,Rabbit,No
-464,60,Farm,No,High,Dog,Yes
-465,38,House,No,Medium,Dog,No
-466,41,Farm,No,Medium,Dog,Yes
-467,21,Farm,No,Medium,Rabbit,Yes
-468,49,Apartment,No,Medium,Bird,Yes
-469,48,Apartment,No,Low,Bird,Yes
-470,20,Apartment,No,Low,Dog,Yes
-471,30,Apartment,Yes,Medium,Rabbit,No
-472,37,House,No,Medium,Rabbit,Yes
-473,27,Farm,Yes,High,Cat,Yes
-474,59,Apartment,No,Low,Rabbit,Yes
-475,41,Farm,Yes,Medium,Dog,Yes
-476,40,Farm,No,Medium,Bird,No
-477,41,House,Yes,Low,Bird,No
-478,22,Farm,Yes,Medium,Rabbit,No
-479,42,Apartment,Yes,Medium,Bird,No
-480,24,Apartment,No,Low,Bird,Yes
-481,49,Farm,No,Low,Cat,No
-482,56,Apartment,Yes,High,Dog,Yes
-483,48,Apartment,Yes,High,Dog,No
-484,46,House,No,High,Rabbit,No
-485,39,House,Yes,Low,Dog,No
-486,35,Farm,No,Medium,Rabbit,Yes
-487,56,Farm,No,Medium,Bird,Yes
-488,54,Apartment,Yes,High,Rabbit,No
-489,47,Apartment,No,Low,Rabbit,Yes
-490,38,Farm,No,Medium,Cat,Yes
-491,27,Farm,No,High,Dog,No
-492,35,Farm,No,Low,Bird,Yes
-493,36,House,No,High,Cat,Yes
-494,45,House,No,Medium,Rabbit,No
-495,45,Apartment,No,Low,Rabbit,Yes
-496,51,Farm,Yes,Low,Cat,No
-497,44,Apartment,No,Low,Cat,Yes
-498,19,Farm,Yes,High,Dog,Yes
-499,37,House,No,High,Dog,Yes
-500,33,House,No,High,Bird,Yes
+UserID,PreferredPetType,LivingSpace,Allergies,ActivityLevel,PastPetExperience,MaxAdoptionFee
+1,Dog,Apartment,0,Low,None,244.71
+2,Cat,Apartment,1,Moderate,Some,128.74
+3,Dog,Apartment,0,High,Some,108.64
+4,Dog,Small Space,0,Low,Experienced,229.72
+5,Bird,House,0,High,Experienced,152.73
+6,Dog,House,0,High,Some,82.21
+7,Cat,House,0,Moderate,Some,272.85
+8,Dog,Apartment,0,High,Some,304.63
+9,Cat,House,1,Moderate,Some,316.79
+10,Cat,Small Space,1,Moderate,Some,214.03
+11,Dog,House,0,High,Some,246.94
+12,Dog,Small Space,0,High,Some,302.74
+13,Dog,Apartment,0,Moderate,Some,151.89
+14,Cat,Apartment,0,Moderate,Some,283.3
+15,Rabbit,Small Space,0,Low,Experienced,220.65
+16,Cat,Small Space,0,Low,Some,268.53
+17,Cat,Small Space,0,Moderate,Some,213.96
+18,Dog,House,1,High,Some,297.22
+19,Dog,Small Space,0,Moderate,Some,216.76
+20,Dog,Small Space,0,Low,None,88.7
+21,Dog,Small Space,0,Low,None,308.89
+22,Dog,House,0,Moderate,Some,128.94
+23,Cat,Apartment,1,Low,Some,293.98
+24,Cat,Small Space,0,Low,Experienced,193.23
+25,Bird,House,1,High,Some,288.2
+26,Dog,House,1,Low,Some,285.11
+27,Cat,House,0,Moderate,None,232.26
+28,Rabbit,House,0,High,None,238.14
+29,Cat,House,1,Low,Experienced,231.7
+30,Dog,Apartment,1,Moderate,None,50.0
+31,Dog,Small Space,0,Moderate,Some,208.87
+32,Dog,House,0,Moderate,Some,116.3
+33,Dog,House,0,Moderate,Some,212.84
+34,Rabbit,Apartment,0,Moderate,Experienced,114.28
+35,Dog,Apartment,0,High,Some,111.13
+36,Dog,Apartment,1,High,None,320.37
+37,Rabbit,House,0,Moderate,Experienced,280.21
+38,Rabbit,Apartment,0,Low,Experienced,199.69
+39,Cat,Small Space,0,Low,None,213.86
+40,Cat,Apartment,0,Low,None,181.41
+41,Dog,Apartment,0,Moderate,None,242.74
+42,Dog,Apartment,1,Low,None,149.3
+43,Dog,Apartment,0,Moderate,Experienced,274.53
+44,Cat,House,0,High,Some,181.02
+45,Bird,Small Space,0,Low,Some,168.51
+46,Dog,House,0,High,Experienced,201.63
+47,Cat,Apartment,0,High,Some,155.66
+48,Dog,Apartment,0,Low,Some,224.65
+49,Cat,House,0,High,Experienced,159.7
+50,Dog,Small Space,0,High,Experienced,235.14
+51,Dog,Apartment,0,Moderate,Experienced,291.2
+52,Rabbit,House,0,Low,Some,146.05
+53,Cat,House,1,Moderate,Experienced,190.21
+54,Cat,Apartment,0,High,None,234.6
+55,Dog,House,0,Moderate,Some,167.31
+56,Dog,Apartment,0,Low,Experienced,234.82
+57,Dog,House,0,Moderate,None,241.65
+58,Rabbit,Apartment,0,Moderate,Experienced,281.24
+59,Bird,House,0,Moderate,Some,154.55
+60,Cat,Apartment,0,High,None,129.29
+61,Dog,Small Space,0,Moderate,Experienced,176.93
+62,Rabbit,Apartment,1,High,None,127.42
+63,Cat,Small Space,0,High,Some,242.34
+64,Cat,Small Space,0,Moderate,None,112.87
+65,Dog,Small Space,0,Low,Experienced,374.98
+66,Rabbit,House,1,High,None,297.19
+67,Cat,House,1,High,None,200.94
+68,Rabbit,Apartment,0,Low,None,265.05
+69,Rabbit,Apartment,0,Moderate,Experienced,77.24
+70,Dog,House,0,Low,Experienced,389.25
+71,Rabbit,Apartment,0,High,Experienced,155.73
+72,Rabbit,Small Space,0,High,Some,190.96
+73,Dog,Apartment,0,Low,Some,60.81
+74,Dog,House,0,High,None,236.47
+75,Dog,House,1,Low,Some,117.02
+76,Cat,House,1,High,None,207.62
+77,Dog,House,0,Moderate,Experienced,159.18
+78,Cat,Apartment,0,Moderate,Experienced,119.17
+79,Dog,House,1,Low,Some,139.67
+80,Rabbit,Apartment,0,Low,None,216.93
+81,Dog,Small Space,0,Moderate,Experienced,103.89
+82,Dog,House,0,Moderate,None,143.84
+83,Cat,Small Space,0,Low,None,249.75
+84,Cat,Apartment,0,Low,None,395.19
+85,Dog,Apartment,0,Low,Some,235.82
+86,Dog,Apartment,0,High,Experienced,131.21
+87,Dog,Apartment,0,High,Some,172.47
+88,Rabbit,Apartment,0,Low,None,202.37
+89,Rabbit,House,0,Moderate,Some,173.79
+90,Cat,Apartment,1,Low,Experienced,267.73
+91,Rabbit,House,0,High,None,216.31
+92,Rabbit,Small Space,0,High,None,268.09
+93,Dog,House,0,Moderate,Experienced,176.42
+94,Bird,Apartment,0,High,Experienced,299.41
+95,Rabbit,Apartment,0,High,Experienced,187.51
+96,Dog,House,0,High,Experienced,127.16
+97,Dog,Apartment,0,Moderate,None,363.3
+98,Dog,House,0,Moderate,None,63.13
+99,Dog,Apartment,0,Low,Some,144.59
+100,Rabbit,Small Space,0,Moderate,Some,152.97
+101,Cat,House,0,Moderate,Experienced,388.12
+102,Rabbit,House,0,Low,Experienced,335.51
+103,Rabbit,Apartment,0,Low,Experienced,312.04
+104,Cat,Apartment,0,Moderate,None,175.2
+105,Cat,House,0,Low,Experienced,381.96
+106,Dog,House,0,Moderate,Experienced,227.63
+107,Dog,Apartment,0,High,None,273.29
+108,Cat,Apartment,0,High,Experienced,213.48
+109,Dog,Apartment,0,Moderate,None,196.29
+110,Dog,House,0,Moderate,None,181.12
+111,Rabbit,Apartment,0,Moderate,Some,184.28
+112,Cat,House,1,Low,Some,245.64
+113,Dog,House,1,High,None,227.54
+114,Cat,House,0,Low,Some,197.64
+115,Rabbit,Small Space,0,Low,Experienced,313.21
+116,Dog,Small Space,0,High,Some,50.0
+117,Dog,House,0,Low,Experienced,238.24
+118,Bird,Apartment,0,Moderate,None,253.83
+119,Dog,House,0,Low,None,286.02
+120,Dog,House,1,Low,None,195.13
+121,Cat,House,0,Low,None,215.59
+122,Rabbit,House,0,Low,None,273.95
+123,Dog,Apartment,0,Moderate,None,311.84
+124,Dog,House,0,High,Some,177.46
+125,Dog,Apartment,1,Moderate,Some,220.02
+126,Bird,House,1,High,Experienced,325.89
+127,Dog,Apartment,1,Low,None,50.0
+128,Cat,House,0,Moderate,Some,148.25
+129,Bird,Apartment,0,Low,None,309.94
+130,Dog,House,0,Moderate,Some,281.94
+131,Bird,House,0,Moderate,None,239.18
+132,Bird,Apartment,0,Moderate,Experienced,166.36
+133,Rabbit,House,0,High,Experienced,133.86
+134,Dog,House,0,Moderate,Some,155.66
+135,Cat,House,0,Moderate,None,316.1
+136,Rabbit,Apartment,0,High,Some,152.87
+137,Bird,House,0,Low,Experienced,207.61
+138,Dog,House,0,Moderate,None,143.47
+139,Rabbit,House,0,High,Some,263.21
+140,Dog,House,0,Moderate,Experienced,159.6
+141,Dog,House,0,Low,Experienced,192.68
+142,Cat,Apartment,0,Moderate,Experienced,73.75
+143,Rabbit,Apartment,1,Moderate,Experienced,79.0
+144,Cat,Apartment,0,Moderate,Experienced,200.58
+145,Cat,Apartment,0,Low,Some,100.61
+146,Bird,House,0,High,Some,357.88
+147,Dog,House,1,High,Experienced,50.0
+148,Cat,Apartment,0,Moderate,Some,139.99
+149,Dog,Small Space,0,Moderate,Experienced,201.25
+150,Dog,House,0,High,None,172.62
+151,Cat,Small Space,0,Low,Some,117.19
+152,Bird,House,0,Low,None,128.16
+153,Cat,House,0,Moderate,None,125.7
+154,Rabbit,Apartment,1,High,None,178.5
+155,Dog,Apartment,1,Low,Experienced,346.39
+156,Dog,Apartment,0,High,None,205.85
+157,Cat,House,0,Moderate,Experienced,288.72
+158,Dog,Apartment,0,Moderate,Some,238.02
+159,Dog,House,1,Low,None,283.54
+160,Cat,Apartment,0,Low,None,50.0
+161,Dog,Small Space,1,High,Some,177.17
+162,Dog,Apartment,0,High,Experienced,298.04
+163,Cat,Apartment,0,Moderate,Experienced,157.12
+164,Cat,Apartment,1,High,Experienced,332.19
+165,Bird,House,0,High,Experienced,311.29
+166,Cat,Apartment,0,Moderate,Some,164.82
+167,Cat,House,0,Moderate,Experienced,162.26
+168,Bird,Apartment,0,Moderate,Experienced,123.98
+169,Rabbit,Apartment,0,Moderate,Experienced,152.78
+170,Dog,Small Space,0,Low,None,107.56
+171,Dog,Apartment,0,Moderate,Experienced,232.16
+172,Cat,Small Space,1,Low,Some,90.8
+173,Cat,Small Space,1,High,Experienced,245.28
+174,Rabbit,Apartment,0,High,None,247.11
+175,Rabbit,Apartment,0,Low,Some,75.41
+176,Cat,Apartment,0,Moderate,None,316.24
+177,Bird,House,0,Moderate,None,238.52
+178,Cat,House,0,Moderate,None,256.23
+179,Dog,House,1,Low,Experienced,143.1
+180,Rabbit,House,1,Moderate,None,246.68
+181,Dog,Apartment,0,Low,Some,284.48
+182,Rabbit,Small Space,0,Low,None,192.6
+183,Bird,House,0,Low,Some,350.14
+184,Cat,House,0,Low,None,203.3
+185,Cat,Small Space,0,High,None,285.56
+186,Cat,House,0,High,Some,221.98
+187,Dog,Apartment,0,Moderate,Some,243.91
+188,Dog,House,0,Moderate,None,74.65
+189,Cat,House,1,Low,None,227.83
+190,Rabbit,Apartment,0,Moderate,None,144.88
+191,Cat,Small Space,0,Low,Experienced,136.52
+192,Dog,Apartment,0,Moderate,Some,330.81
+193,Cat,House,1,High,Some,183.97
+194,Rabbit,House,0,Low,None,124.75
+195,Cat,Apartment,0,High,Some,173.07
+196,Cat,Small Space,1,Low,None,102.47
+197,Rabbit,Small Space,0,Moderate,None,307.54
+198,Cat,House,0,Low,Some,147.82
+199,Cat,Apartment,0,Moderate,Some,239.7
+200,Rabbit,Apartment,1,Low,None,301.71
+201,Dog,Apartment,0,Moderate,Some,162.49
+202,Bird,Apartment,1,Moderate,Experienced,239.9
+203,Dog,House,0,Moderate,Some,122.74
+204,Dog,Small Space,0,Moderate,Some,383.43
+205,Rabbit,House,0,High,Experienced,270.23
+206,Dog,Small Space,0,Moderate,Experienced,185.55
+207,Rabbit,House,0,Low,Some,142.04
+208,Rabbit,House,0,Low,Experienced,191.45
+209,Rabbit,Small Space,0,High,None,174.5
+210,Bird,House,0,Moderate,Some,346.47
+211,Dog,Small Space,1,Moderate,None,108.08
+212,Rabbit,Apartment,0,Low,None,210.11
+213,Dog,Apartment,1,Moderate,Some,198.62
+214,Cat,Small Space,0,Low,None,191.19
+215,Rabbit,House,1,High,Some,191.85
+216,Dog,Small Space,1,High,Some,191.29
+217,Cat,Small Space,0,Low,Some,265.48
+218,Cat,Apartment,1,Moderate,None,245.67
+219,Cat,House,0,Low,None,231.42
+220,Bird,Apartment,1,Moderate,Some,50.0
+221,Dog,House,1,High,Experienced,222.48
+222,Cat,House,0,Moderate,None,75.83
+223,Rabbit,Apartment,0,Moderate,None,248.47
+224,Cat,House,0,Low,Experienced,310.59
+225,Dog,House,0,High,None,130.53
+226,Cat,Apartment,0,Moderate,Experienced,180.37
+227,Dog,Small Space,0,Moderate,Some,155.05
+228,Dog,House,0,Low,Some,292.66
+229,Rabbit,Small Space,1,Moderate,Some,207.13
+230,Cat,Apartment,0,High,None,329.62
+231,Bird,Apartment,1,Moderate,Some,231.03
+232,Rabbit,House,1,Moderate,Experienced,218.18
+233,Cat,Apartment,0,Moderate,Experienced,205.12
+234,Dog,Small Space,0,High,Some,261.35
+235,Cat,Apartment,0,Moderate,Experienced,69.67
+236,Dog,House,0,Low,None,206.4
+237,Bird,House,0,Moderate,Some,194.75
+238,Dog,Apartment,0,Moderate,Some,254.41
+239,Dog,Apartment,1,High,Experienced,185.92
+240,Cat,House,0,High,Some,122.09
+241,Dog,House,0,Moderate,Some,200.55
+242,Dog,Apartment,0,Low,Experienced,118.79
+243,Cat,Small Space,1,High,Some,55.61
+244,Dog,Apartment,1,Moderate,None,254.53
+245,Dog,House,1,Moderate,Some,243.43
+246,Dog,House,0,Moderate,Some,235.03
+247,Rabbit,Apartment,0,Moderate,Some,297.72
+248,Cat,Small Space,1,Low,Experienced,150.12
+249,Cat,Apartment,0,High,Some,92.67
+250,Cat,Apartment,0,High,Some,194.75
+251,Dog,Apartment,0,Moderate,Some,173.94
+252,Bird,House,0,Moderate,None,136.83
+253,Dog,House,0,Low,None,194.01
+254,Cat,House,0,Low,Experienced,154.13
+255,Rabbit,Apartment,0,Moderate,Some,62.3
+256,Rabbit,Apartment,0,Moderate,None,166.91
+257,Dog,Small Space,0,High,None,114.77
+258,Dog,Apartment,0,High,Some,217.37
+259,Rabbit,Small Space,0,Moderate,Experienced,150.8
+260,Dog,Apartment,0,Moderate,Experienced,283.37
+261,Rabbit,Small Space,0,Low,None,320.29
+262,Rabbit,Apartment,0,High,Experienced,250.95
+263,Rabbit,House,0,Moderate,Some,83.67
+264,Dog,Apartment,0,Low,Some,312.89
+265,Rabbit,Apartment,0,Moderate,Some,318.18
+266,Cat,Apartment,1,High,None,201.41
+267,Rabbit,Apartment,0,High,Experienced,299.22
+268,Dog,Apartment,0,Low,None,158.62
+269,Dog,House,0,High,None,60.03
+270,Dog,House,1,Low,Experienced,142.98
+271,Dog,House,0,Low,Some,329.7
+272,Cat,House,0,High,Experienced,88.17
+273,Bird,House,0,High,Some,199.96
+274,Dog,House,0,Moderate,Some,202.56
+275,Rabbit,House,0,Moderate,Experienced,161.53
+276,Dog,House,0,High,None,166.74
+277,Dog,Small Space,0,High,Experienced,205.42
+278,Dog,Apartment,0,High,None,157.84
+279,Dog,Apartment,1,Moderate,Experienced,93.35
+280,Bird,House,0,High,None,216.13
+281,Dog,Apartment,0,High,Some,280.5
+282,Cat,Small Space,1,Low,Experienced,265.22
+283,Cat,Small Space,1,High,Some,139.27
+284,Bird,Apartment,1,Moderate,Experienced,106.16
+285,Dog,Apartment,1,Moderate,Experienced,178.69
+286,Dog,House,1,Moderate,Experienced,317.58
+287,Dog,House,0,Low,Experienced,248.42
+288,Cat,Apartment,1,Moderate,Some,252.8
+289,Dog,House,1,High,None,266.74
+290,Rabbit,House,0,Low,None,231.56
+291,Cat,Apartment,0,Moderate,None,209.05
+292,Cat,Apartment,1,High,None,249.67
+293,Cat,House,0,Moderate,Some,159.04
+294,Dog,Apartment,1,Moderate,None,93.92
+295,Cat,Small Space,0,Moderate,None,254.22
+296,Bird,House,0,Moderate,None,292.83
+297,Rabbit,House,0,Moderate,Experienced,116.13
+298,Rabbit,Small Space,0,High,Some,261.64
+299,Rabbit,Small Space,0,Moderate,Some,326.06
+300,Dog,Apartment,0,High,Experienced,199.83
+301,Dog,Apartment,0,Moderate,None,138.65
+302,Dog,House,0,Moderate,Experienced,209.23
+303,Dog,House,0,Moderate,Some,158.71
+304,Dog,Apartment,0,High,None,153.75
+305,Cat,Small Space,0,Moderate,Some,232.49
+306,Cat,Apartment,0,Low,Experienced,79.72
+307,Rabbit,Apartment,0,Low,Some,91.71
+308,Rabbit,Apartment,0,Low,Experienced,201.45
+309,Bird,House,0,Low,None,198.33
+310,Dog,House,0,Moderate,None,225.77
+311,Dog,Apartment,0,Low,None,340.64
+312,Cat,Apartment,1,High,None,207.84
+313,Dog,Apartment,1,Low,None,244.86
+314,Dog,House,1,Moderate,Experienced,126.84
+315,Dog,Apartment,0,Moderate,None,257.6
+316,Dog,Small Space,0,Low,Some,160.52
+317,Cat,Apartment,0,High,Some,205.36
+318,Cat,Small Space,0,Low,Experienced,191.84
+319,Cat,Apartment,1,Moderate,Experienced,277.47
+320,Cat,House,0,High,Experienced,101.75
+321,Dog,Apartment,0,Moderate,Experienced,50.0
+322,Dog,Apartment,0,Low,Experienced,183.99
+323,Dog,Small Space,1,Moderate,Experienced,235.14
+324,Dog,Small Space,1,High,Experienced,211.42
+325,Rabbit,House,0,High,None,292.42
+326,Rabbit,House,1,High,Some,232.8
+327,Cat,House,0,Moderate,Some,157.71
+328,Dog,Small Space,1,High,Some,50.0
+329,Cat,Apartment,1,Low,None,182.2
+330,Cat,House,1,Low,Some,277.1
+331,Cat,House,0,High,Experienced,170.6
+332,Cat,Apartment,0,Low,None,202.12
+333,Cat,Small Space,0,Low,Experienced,231.6
+334,Cat,Apartment,0,Low,Experienced,123.85
+335,Rabbit,Apartment,1,Moderate,Experienced,246.74
+336,Dog,House,0,High,Experienced,322.78
+337,Rabbit,House,0,Moderate,Experienced,187.04
+338,Dog,Apartment,0,Low,Some,115.32
+339,Dog,Apartment,0,Moderate,None,195.0
+340,Bird,Small Space,0,High,Some,50.0
+341,Bird,Apartment,0,High,Experienced,225.27
+342,Dog,House,0,Moderate,Experienced,233.92
+343,Cat,House,0,High,Experienced,325.67
+344,Dog,House,1,High,None,185.45
+345,Cat,Small Space,0,Low,Some,230.64
+346,Rabbit,House,1,Low,Some,135.4
+347,Bird,House,0,Low,None,173.27
+348,Cat,House,0,High,None,85.61
+349,Dog,House,0,Low,None,185.39
+350,Cat,House,0,Moderate,Experienced,177.1
+351,Dog,Small Space,0,Low,None,222.44
+352,Bird,Apartment,0,High,None,153.23
+353,Rabbit,Apartment,0,Moderate,Experienced,206.25
+354,Cat,Apartment,0,High,Some,175.0
+355,Dog,Apartment,0,High,None,175.14
+356,Dog,Apartment,0,Low,None,206.03
+357,Dog,Small Space,0,Moderate,None,203.04
+358,Rabbit,House,1,Low,None,257.09
+359,Cat,House,0,High,None,190.95
+360,Dog,House,0,Moderate,Some,173.76
+361,Cat,Small Space,1,Low,None,186.44
+362,Rabbit,House,0,Low,Some,146.4
+363,Dog,Small Space,1,Moderate,Experienced,173.01
+364,Rabbit,Apartment,0,High,Some,352.34
+365,Rabbit,Small Space,1,Moderate,Experienced,131.55
+366,Bird,House,0,High,Some,179.1
+367,Dog,Apartment,1,Moderate,Some,170.94
+368,Dog,House,0,Low,Experienced,181.46
+369,Dog,House,0,High,None,175.16
+370,Dog,Apartment,0,Low,None,220.94
+371,Dog,House,0,High,Some,71.74
+372,Cat,Apartment,0,Moderate,Some,277.79
+373,Cat,Apartment,0,Low,Experienced,247.44
+374,Rabbit,Small Space,1,Moderate,Experienced,106.78
+375,Dog,House,0,High,Some,50.0
+376,Cat,Small Space,1,High,Some,126.72
+377,Rabbit,House,0,Low,Some,181.8
+378,Rabbit,Apartment,1,Low,Experienced,393.52
+379,Rabbit,House,1,Moderate,Experienced,240.74
+380,Rabbit,House,0,Moderate,Experienced,64.43
+381,Bird,Small Space,1,High,None,148.28
+382,Dog,Apartment,1,Low,Experienced,196.01
+383,Cat,Small Space,0,High,None,219.03
+384,Dog,Small Space,0,Moderate,None,101.39
+385,Dog,House,0,High,Experienced,189.88
+386,Dog,Small Space,1,Moderate,None,146.18
+387,Dog,Apartment,0,Moderate,Experienced,117.22
+388,Dog,Small Space,0,High,None,219.47
+389,Dog,House,0,Moderate,Experienced,258.04
+390,Dog,Apartment,0,High,None,263.08
+391,Bird,Small Space,1,High,Some,243.08
+392,Dog,House,1,Moderate,None,162.7
+393,Rabbit,House,0,Moderate,Some,253.59
+394,Dog,House,0,Low,Some,223.18
+395,Bird,Apartment,0,Low,Some,210.05
+396,Rabbit,House,0,Low,None,154.12
+397,Cat,Small Space,0,Low,None,162.73
+398,Cat,Apartment,0,Low,None,205.54
+399,Dog,Apartment,0,Moderate,Some,382.99
+400,Bird,Apartment,0,Moderate,Experienced,222.59
+401,Rabbit,House,0,Moderate,Experienced,154.16
+402,Rabbit,House,0,Low,None,137.57
+403,Cat,House,1,Low,Some,163.12
+404,Dog,Small Space,0,Moderate,Experienced,363.3
+405,Rabbit,House,0,Moderate,None,170.06
+406,Dog,Apartment,1,Moderate,Some,268.02
+407,Cat,Small Space,0,Moderate,Some,171.81
+408,Dog,House,0,High,None,219.59
+409,Bird,House,0,Moderate,None,259.38
+410,Dog,House,0,Moderate,None,157.11
+411,Dog,Small Space,1,High,Some,151.92
+412,Cat,House,0,High,None,324.42
+413,Rabbit,Apartment,0,Moderate,None,273.84
+414,Cat,House,0,Moderate,Some,259.3
+415,Dog,Apartment,0,Low,None,259.05
+416,Dog,Apartment,1,Moderate,None,234.47
+417,Rabbit,House,1,High,Experienced,351.33
+418,Bird,Apartment,0,Moderate,None,203.29
+419,Rabbit,Apartment,0,High,Some,243.29
+420,Cat,Apartment,0,Moderate,Some,91.18
+421,Bird,House,0,High,Some,138.13
+422,Cat,Small Space,0,Moderate,Some,109.94
+423,Cat,Small Space,0,Low,None,295.55
+424,Cat,Apartment,0,Moderate,Experienced,50.0
+425,Cat,House,1,Low,Some,169.83
+426,Rabbit,Small Space,0,Low,Experienced,50.0
+427,Cat,Apartment,0,High,Some,137.65
+428,Dog,House,0,Low,Experienced,163.18
+429,Dog,House,1,High,Experienced,303.87
+430,Dog,Apartment,0,Low,Experienced,229.75
+431,Cat,Small Space,0,Low,Some,137.51
+432,Dog,Small Space,0,High,Some,279.95
+433,Dog,Apartment,1,Moderate,Experienced,201.34
+434,Cat,Apartment,0,Moderate,Experienced,202.82
+435,Cat,Apartment,0,Moderate,Experienced,109.8
+436,Rabbit,Apartment,1,Moderate,Some,125.75
+437,Cat,House,1,High,Experienced,138.12
+438,Rabbit,House,0,Moderate,None,203.48
+439,Bird,Apartment,0,Moderate,Some,205.84
+440,Rabbit,Small Space,0,High,None,315.81
+441,Cat,Apartment,0,Low,Some,228.88
+442,Dog,Apartment,1,Moderate,Experienced,50.0
+443,Bird,Apartment,0,High,None,219.7
+444,Dog,House,1,Moderate,Some,91.25
+445,Dog,House,0,High,Some,127.55
+446,Cat,Apartment,0,Moderate,None,139.09
+447,Dog,Apartment,0,High,Some,150.25
+448,Bird,Small Space,0,High,Some,96.86
+449,Cat,Small Space,0,Low,None,215.26
+450,Cat,Apartment,0,Low,Experienced,94.19
+451,Cat,Apartment,0,Moderate,Experienced,226.75
+452,Cat,House,0,High,None,367.77
+453,Dog,House,0,Low,None,100.3
+454,Cat,Apartment,0,Low,Some,178.66
+455,Rabbit,Small Space,0,Moderate,Experienced,50.0
+456,Cat,House,0,High,None,177.43
+457,Rabbit,House,0,Moderate,None,248.2
+458,Dog,House,0,Moderate,Some,254.05
+459,Dog,Small Space,0,Low,Experienced,205.8
+460,Dog,House,0,Moderate,Some,266.69
+461,Dog,Apartment,0,Low,Some,390.95
+462,Rabbit,Apartment,1,Low,Experienced,328.42
+463,Rabbit,House,0,High,Some,160.81
+464,Dog,Apartment,0,High,Experienced,91.17
+465,Cat,House,0,Low,Some,169.54
+466,Rabbit,Small Space,1,Low,Experienced,128.98
+467,Dog,House,0,Moderate,Some,233.85
+468,Dog,Small Space,0,Moderate,Experienced,111.41
+469,Bird,Apartment,0,Low,Some,194.54
+470,Cat,Small Space,0,Moderate,Experienced,262.85
+471,Bird,House,1,Low,None,192.45
+472,Dog,Apartment,0,High,Some,129.03
+473,Rabbit,House,0,High,Experienced,288.11
+474,Dog,Apartment,1,Moderate,None,59.08
+475,Dog,House,0,Moderate,Some,175.42
+476,Cat,House,0,High,None,196.88
+477,Dog,Apartment,0,High,Experienced,201.19
+478,Dog,House,0,Low,None,213.54
+479,Dog,House,0,Low,Experienced,245.78
+480,Dog,Apartment,0,Moderate,Some,197.34
+481,Rabbit,Apartment,0,Low,None,172.4
+482,Cat,House,1,Moderate,Some,169.43
+483,Dog,House,1,Moderate,None,154.14
+484,Dog,Small Space,0,Moderate,Some,259.07
+485,Dog,Small Space,0,Moderate,Some,151.51
+486,Cat,House,1,Moderate,None,263.51
+487,Dog,House,0,High,Experienced,201.42
+488,Rabbit,House,0,Low,None,160.91
+489,Dog,House,0,Moderate,Some,246.38
+490,Dog,Apartment,0,Low,Some,145.44
+491,Rabbit,Apartment,0,Low,Some,247.86
+492,Rabbit,House,1,Moderate,Some,215.95
+493,Dog,Apartment,0,Low,Some,155.28
+494,Rabbit,House,1,Low,Experienced,239.65
+495,Cat,Small Space,0,Low,Some,240.99
+496,Rabbit,Apartment,1,Moderate,None,286.81
+497,Cat,House,0,High,Some,272.46
+498,Cat,Small Space,0,Low,None,236.85
+499,Bird,House,0,Moderate,None,115.43
+500,Dog,Apartment,0,Low,Some,383.64
+501,Cat,Apartment,0,Moderate,Some,94.73
+502,Cat,House,0,Moderate,Some,271.19
+503,Dog,House,0,Moderate,Experienced,232.35
+504,Dog,Apartment,0,High,Some,111.94
+505,Dog,Apartment,0,High,Some,190.68
+506,Cat,Small Space,0,Low,None,194.09
+507,Cat,House,0,High,Some,297.92
+508,Cat,Small Space,1,Low,Some,146.5
+509,Dog,House,0,High,Some,180.35
+510,Cat,Small Space,1,Low,Experienced,50.0
+511,Bird,Apartment,0,Moderate,Some,330.11
+512,Dog,House,0,Low,Some,119.71
+513,Cat,Apartment,0,Low,Some,224.52
+514,Rabbit,House,0,High,Some,192.39
+515,Rabbit,House,0,High,Some,192.65
+516,Cat,Apartment,0,Moderate,None,260.74
+517,Rabbit,Small Space,0,High,None,325.34
+518,Dog,Small Space,0,High,None,218.86
+519,Rabbit,Apartment,0,Low,Some,249.13
+520,Dog,House,0,Low,Experienced,224.67
+521,Dog,Apartment,0,Low,Some,276.31
+522,Dog,House,0,Moderate,None,165.28
+523,Rabbit,Small Space,0,Low,Experienced,280.65
+524,Cat,Apartment,0,Low,Experienced,283.29
+525,Dog,Small Space,0,Low,Experienced,281.19
+526,Dog,Apartment,0,Low,Some,150.49
+527,Bird,House,0,High,Experienced,187.37
+528,Rabbit,House,0,Low,None,217.96
+529,Cat,Apartment,0,Moderate,None,97.19
+530,Cat,Apartment,0,Moderate,None,319.62
+531,Cat,Small Space,0,Moderate,Experienced,199.08
+532,Dog,House,0,Low,None,221.29
+533,Bird,Apartment,0,Moderate,Some,156.72
+534,Dog,House,0,Low,Some,100.48
+535,Cat,Apartment,1,Moderate,Some,154.7
+536,Dog,Apartment,0,Low,Experienced,216.44
+537,Cat,House,0,Moderate,None,250.51
+538,Cat,Apartment,0,Moderate,Some,212.13
+539,Cat,Small Space,0,Moderate,Experienced,226.0
+540,Dog,House,1,Moderate,None,174.72
+541,Cat,Small Space,0,Moderate,Some,237.22
+542,Dog,House,1,High,Experienced,311.21
+543,Dog,Small Space,0,Low,Experienced,252.86
+544,Dog,House,0,High,Experienced,260.72
+545,Rabbit,House,0,High,Some,222.05
+546,Cat,Small Space,0,Moderate,Some,87.26
+547,Cat,House,0,Low,None,121.65
+548,Rabbit,Apartment,0,Moderate,None,234.12
+549,Cat,House,0,Low,None,199.18
+550,Cat,Small Space,1,Low,Some,232.99
+551,Dog,House,0,Low,Experienced,325.73
+552,Dog,House,0,Low,Some,254.45
+553,Cat,House,0,Moderate,Some,294.42
+554,Cat,Small Space,0,High,Some,207.1
+555,Rabbit,Apartment,0,Low,Some,139.46
+556,Rabbit,House,0,High,Experienced,195.66
+557,Dog,Apartment,0,High,None,139.64
+558,Dog,House,0,High,Some,316.87
+559,Cat,House,0,High,Some,259.28
+560,Dog,Apartment,0,Moderate,None,239.04
+561,Dog,Apartment,1,Low,Some,292.7
+562,Rabbit,House,0,Moderate,Experienced,50.0
+563,Dog,Apartment,0,Moderate,None,244.11
+564,Bird,Apartment,0,High,None,101.7
+565,Rabbit,Small Space,1,High,None,199.46
+566,Rabbit,Apartment,0,Moderate,Experienced,176.62
+567,Dog,House,0,Moderate,Experienced,249.63
+568,Dog,Small Space,0,Low,Some,217.11
+569,Cat,Apartment,0,Low,Some,300.88
+570,Dog,Apartment,0,Moderate,Experienced,154.86
+571,Dog,House,0,Moderate,Experienced,253.18
+572,Dog,House,0,High,Experienced,212.17
+573,Dog,Small Space,0,Moderate,Experienced,77.35
+574,Dog,Small Space,0,High,Some,131.1
+575,Rabbit,House,1,Moderate,Some,188.76
+576,Dog,Apartment,0,High,Experienced,283.42
+577,Dog,Apartment,0,Low,Experienced,234.78
+578,Cat,Apartment,0,High,None,112.44
+579,Bird,Apartment,0,Moderate,None,189.48
+580,Dog,House,0,Low,Experienced,351.34
+581,Dog,House,1,Low,None,208.34
+582,Cat,Apartment,1,High,Experienced,175.45
+583,Bird,Small Space,0,Low,Some,236.88
+584,Rabbit,Apartment,0,Moderate,None,257.25
+585,Cat,House,0,Moderate,None,165.79
+586,Dog,House,0,Moderate,None,237.69
+587,Cat,House,0,High,None,175.33
+588,Dog,House,0,Moderate,Some,253.95
+589,Cat,Apartment,0,Moderate,Experienced,212.73
+590,Rabbit,House,0,High,Experienced,236.15
+591,Bird,House,0,High,Some,143.06
+592,Dog,Small Space,0,High,Some,138.4
+593,Dog,House,0,Moderate,Some,270.91
+594,Cat,House,0,Low,Some,194.05
+595,Rabbit,House,0,Moderate,Some,221.38
+596,Rabbit,Small Space,0,High,None,177.02
+597,Dog,Apartment,0,Low,None,267.4
+598,Dog,House,0,Low,None,154.41
+599,Cat,House,0,Low,None,189.83
+600,Dog,House,1,Moderate,Experienced,258.95
+601,Rabbit,Apartment,0,High,None,287.97
+602,Cat,House,0,Low,Experienced,160.72
+603,Rabbit,Apartment,0,Moderate,Experienced,346.98
+604,Cat,House,1,High,Experienced,223.49
+605,Rabbit,House,0,Low,Experienced,121.78
+606,Dog,Small Space,1,Moderate,None,227.68
+607,Rabbit,House,0,High,Some,171.28
+608,Dog,Apartment,1,High,None,232.56
+609,Cat,Apartment,0,Low,Experienced,196.79
+610,Dog,Small Space,0,Low,Experienced,205.57
+611,Cat,Apartment,1,Low,Experienced,131.63
+612,Dog,House,1,High,Some,274.25
+613,Dog,Apartment,0,High,Experienced,113.29
+614,Bird,House,0,Moderate,None,116.84
+615,Dog,House,0,Moderate,None,227.55
+616,Rabbit,Apartment,0,Low,Experienced,320.21
+617,Bird,Apartment,0,Moderate,Some,173.56
+618,Dog,Small Space,1,Moderate,Experienced,252.57
+619,Cat,House,0,High,None,280.5
+620,Dog,House,0,Moderate,Experienced,261.1
+621,Dog,Small Space,0,Moderate,Some,176.66
+622,Cat,Small Space,0,Low,Experienced,118.17
+623,Bird,Apartment,0,Low,Experienced,50.0
+624,Dog,Small Space,0,Low,Experienced,180.29
+625,Cat,Apartment,0,Low,None,288.36
+626,Cat,Apartment,0,Moderate,Experienced,115.69
+627,Rabbit,Small Space,0,Low,None,252.52
+628,Dog,Apartment,1,Low,None,128.74
+629,Cat,Apartment,1,High,Some,207.96
+630,Cat,Apartment,0,Moderate,Experienced,253.08
+631,Cat,House,0,Moderate,Some,150.54
+632,Bird,House,0,High,Experienced,212.79
+633,Rabbit,House,0,Moderate,Experienced,168.87
+634,Dog,Small Space,0,High,None,252.89
+635,Cat,House,0,Low,Experienced,217.65
+636,Dog,Apartment,0,High,None,204.24
+637,Dog,Small Space,0,High,Experienced,316.88
+638,Cat,Apartment,0,High,Some,249.67
+639,Dog,Apartment,1,Low,Some,148.22
+640,Cat,Apartment,0,Moderate,Some,193.56
+641,Bird,House,1,Low,None,194.31
+642,Dog,Apartment,0,Moderate,Some,206.02
+643,Bird,Apartment,0,High,None,389.34
+644,Cat,Apartment,0,Moderate,None,227.81
+645,Cat,Apartment,0,Moderate,None,50.0
+646,Rabbit,House,0,Moderate,Some,159.29
+647,Dog,Small Space,0,Moderate,Experienced,55.07
+648,Cat,House,0,High,Some,175.27
+649,Cat,Apartment,0,High,Experienced,50.95
+650,Dog,Apartment,1,Low,Some,134.63
+651,Bird,Small Space,0,Moderate,Some,85.95
+652,Rabbit,Apartment,0,Low,Some,228.81
+653,Dog,Small Space,0,Moderate,Some,200.04
+654,Dog,Apartment,0,High,Some,222.72
+655,Cat,Small Space,0,High,None,192.16
+656,Dog,Apartment,0,Moderate,Experienced,95.43
+657,Cat,House,0,Low,Experienced,238.51
+658,Dog,House,0,Low,None,344.17
+659,Cat,House,0,Moderate,Experienced,230.69
+660,Dog,Apartment,0,Low,None,168.06
+661,Dog,House,1,Moderate,None,92.89
+662,Cat,House,0,Low,None,131.89
+663,Cat,Apartment,0,Moderate,Experienced,233.98
+664,Bird,Apartment,1,Low,Experienced,280.48
+665,Rabbit,House,0,High,Experienced,219.56
+666,Dog,Apartment,0,High,None,259.99
+667,Dog,House,0,Moderate,Some,253.08
+668,Rabbit,Apartment,0,Low,Experienced,237.99
+669,Bird,House,1,Moderate,None,150.61
+670,Rabbit,Apartment,0,Low,Some,213.04
+671,Dog,House,0,Moderate,None,136.37
+672,Bird,Apartment,0,High,None,201.31
+673,Dog,Apartment,1,Moderate,Some,224.81
+674,Rabbit,Apartment,0,Moderate,Some,325.91
+675,Bird,Small Space,0,Moderate,None,101.77
+676,Dog,Apartment,1,High,None,236.11
+677,Bird,House,0,High,None,311.09
+678,Dog,Apartment,0,Moderate,None,256.91
+679,Bird,Apartment,0,Moderate,None,262.47
+680,Dog,House,0,Moderate,Some,244.08
+681,Bird,House,0,Low,Some,297.38
+682,Dog,Small Space,0,Moderate,Some,118.44
+683,Rabbit,Small Space,0,Moderate,Experienced,96.06
+684,Cat,House,0,Low,Experienced,199.52
+685,Cat,House,0,Low,None,50.0
+686,Dog,House,0,Moderate,None,292.3
+687,Rabbit,Apartment,0,High,Experienced,291.55
+688,Dog,Small Space,1,Moderate,None,167.5
+689,Cat,House,0,Moderate,None,172.19
+690,Dog,House,1,Moderate,None,194.57
+691,Bird,Apartment,0,Moderate,Some,203.9
+692,Dog,Apartment,0,Moderate,Some,209.54
+693,Dog,Small Space,0,Moderate,Experienced,241.87
+694,Dog,Apartment,0,Low,Experienced,187.05
+695,Cat,House,0,Moderate,Some,270.74
+696,Dog,Apartment,0,Low,Some,233.45
+697,Cat,Small Space,1,Moderate,None,154.48
+698,Rabbit,Apartment,0,High,None,300.13
+699,Rabbit,Small Space,0,Low,None,98.13
+700,Cat,Apartment,1,Moderate,None,193.09
+701,Dog,Small Space,1,Moderate,None,272.52
+702,Cat,House,1,High,None,145.77
+703,Dog,Apartment,0,Moderate,Some,223.22
+704,Rabbit,House,0,High,Experienced,240.75
+705,Dog,Apartment,0,High,Some,135.46
+706,Cat,Apartment,0,Moderate,Experienced,194.56
+707,Dog,Small Space,0,Moderate,Some,188.26
+708,Rabbit,House,0,Moderate,Some,158.62
+709,Dog,Apartment,0,High,Some,372.63
+710,Cat,Apartment,0,Low,None,142.77
+711,Dog,Apartment,0,Moderate,None,275.37
+712,Rabbit,Small Space,0,Moderate,Experienced,170.54
+713,Bird,Apartment,0,Moderate,Experienced,118.5
+714,Cat,Small Space,1,Moderate,None,207.71
+715,Cat,Small Space,0,Moderate,None,248.68
+716,Bird,Apartment,0,Low,Some,269.04
+717,Cat,Apartment,0,Moderate,None,317.17
+718,Cat,Small Space,0,Moderate,Some,400.0
+719,Cat,Apartment,0,High,None,218.79
+720,Cat,Apartment,1,Low,Some,150.27
+721,Dog,Apartment,0,High,None,233.97
+722,Rabbit,House,0,Moderate,Some,180.03
+723,Cat,House,0,Low,None,269.45
+724,Dog,Apartment,0,High,Some,102.71
+725,Rabbit,Apartment,1,Low,Experienced,377.63
+726,Dog,Small Space,0,High,Some,264.2
+727,Dog,House,0,High,Experienced,73.7
+728,Cat,House,0,Low,Experienced,146.82
+729,Rabbit,House,0,Low,Experienced,261.21
+730,Rabbit,House,0,Moderate,Experienced,288.23
+731,Bird,House,0,Moderate,Some,104.58
+732,Rabbit,Apartment,0,Moderate,Experienced,253.48
+733,Dog,Apartment,0,Moderate,None,53.95
+734,Dog,House,0,Moderate,Some,193.3
+735,Rabbit,House,1,Low,Experienced,283.4
+736,Dog,Small Space,0,High,Experienced,158.64
+737,Cat,Apartment,0,High,Experienced,86.98
+738,Cat,Small Space,1,Moderate,Experienced,210.97
+739,Dog,Small Space,0,High,Experienced,154.65
+740,Bird,Apartment,0,Low,Experienced,247.22
+741,Cat,House,0,Low,Experienced,133.6
+742,Cat,House,0,Moderate,Some,142.05
+743,Bird,Small Space,1,Moderate,Experienced,50.0
+744,Cat,House,0,Moderate,Experienced,212.75
+745,Dog,House,0,High,Experienced,187.93
+746,Cat,House,0,High,Some,110.87
+747,Rabbit,Apartment,0,Moderate,Some,214.53
+748,Rabbit,Apartment,1,High,None,277.03
+749,Rabbit,House,0,Low,Experienced,183.83
+750,Rabbit,House,0,Low,Some,220.11
+751,Dog,House,0,High,None,220.5
+752,Rabbit,House,0,Moderate,None,109.68
+753,Rabbit,Apartment,0,Moderate,Experienced,354.24
+754,Dog,House,0,Moderate,Experienced,164.69
+755,Dog,Apartment,0,Moderate,Experienced,249.21
+756,Bird,Small Space,0,Low,Some,257.69
+757,Rabbit,Small Space,1,Moderate,Some,189.53
+758,Rabbit,House,0,Low,Some,245.51
+759,Rabbit,Apartment,0,Low,None,218.44
+760,Cat,Apartment,1,Moderate,Experienced,93.68
+761,Cat,House,0,Low,None,175.08
+762,Cat,House,1,High,Some,154.06
+763,Dog,House,1,Low,Some,165.37
+764,Rabbit,Apartment,0,Low,Some,102.2
+765,Cat,House,0,Moderate,Experienced,284.48
+766,Cat,House,0,Moderate,None,320.15
+767,Cat,Apartment,0,Low,Experienced,273.35
+768,Cat,House,0,Low,None,295.29
+769,Dog,Apartment,0,High,None,174.15
+770,Dog,House,0,Moderate,Some,152.28
+771,Dog,Small Space,0,Moderate,None,141.61
+772,Dog,House,0,Moderate,Experienced,248.3
+773,Bird,Small Space,1,Low,Some,217.03
+774,Dog,House,0,Moderate,None,194.21
+775,Dog,Apartment,0,Moderate,None,297.14
+776,Cat,House,0,High,Some,230.37
+777,Cat,House,1,Low,Experienced,137.1
+778,Dog,Apartment,1,High,Some,148.93
+779,Rabbit,Apartment,0,Low,Some,251.15
+780,Rabbit,House,1,Low,Experienced,278.13
+781,Dog,Apartment,0,Low,Some,241.38
+782,Dog,Apartment,1,Low,None,342.27
+783,Bird,House,0,High,Some,322.63
+784,Rabbit,Apartment,0,Moderate,Some,233.08
+785,Cat,Small Space,0,Low,Experienced,137.11
+786,Dog,Apartment,0,High,Some,101.75
+787,Cat,House,0,High,Experienced,170.95
+788,Cat,House,0,High,None,256.49
+789,Dog,House,1,High,Experienced,337.0
+790,Cat,Apartment,0,Low,Some,231.31
+791,Cat,Small Space,0,High,Some,287.65
+792,Dog,House,0,Moderate,None,181.6
+793,Rabbit,Small Space,0,High,Some,246.71
+794,Rabbit,Apartment,1,High,Experienced,261.75
+795,Dog,Apartment,0,Moderate,Experienced,51.53
+796,Rabbit,House,0,High,None,168.99
+797,Dog,Apartment,0,Low,Some,271.23
+798,Rabbit,House,0,Moderate,None,220.59
+799,Dog,Apartment,1,Low,Experienced,110.26
+800,Dog,House,0,High,Experienced,50.0
+801,Cat,Small Space,1,Low,None,172.57
+802,Cat,House,0,Moderate,Experienced,194.63
+803,Bird,Small Space,0,Moderate,Experienced,133.71
+804,Dog,House,1,High,Some,210.73
+805,Dog,House,0,Moderate,Experienced,237.98
+806,Cat,Small Space,0,High,Some,250.3
+807,Cat,Small Space,0,High,Some,50.0
+808,Dog,House,0,Moderate,Some,101.43
+809,Cat,Apartment,1,Moderate,Some,177.15
+810,Rabbit,House,0,High,Some,242.91
+811,Rabbit,Apartment,1,High,None,236.69
+812,Bird,House,0,High,Experienced,235.39
+813,Dog,House,0,Low,Some,171.24
+814,Rabbit,Small Space,0,High,Some,175.43
+815,Dog,Small Space,0,Moderate,Experienced,145.38
+816,Cat,House,1,Moderate,Some,257.61
+817,Cat,Apartment,0,High,Some,130.96
+818,Bird,Small Space,0,Low,Experienced,263.75
+819,Rabbit,Apartment,1,High,Experienced,215.59
+820,Bird,House,0,Moderate,None,196.62
+821,Rabbit,Apartment,0,High,Some,150.75
+822,Bird,Apartment,1,Low,Experienced,98.33
+823,Rabbit,Small Space,0,Moderate,Some,151.43
+824,Cat,Apartment,0,High,Some,175.25
+825,Dog,House,0,Low,None,50.0
+826,Dog,Apartment,0,Low,None,185.2
+827,Dog,Small Space,0,High,Experienced,269.33
+828,Cat,Small Space,0,Low,Experienced,242.54
+829,Cat,Apartment,0,High,Experienced,162.78
+830,Cat,Apartment,0,Low,Experienced,203.52
+831,Bird,House,1,Moderate,None,158.29
+832,Bird,Apartment,0,High,None,211.16
+833,Dog,House,0,Moderate,Experienced,315.51
+834,Dog,Apartment,0,Moderate,Some,272.64
+835,Cat,Apartment,0,Moderate,Some,239.06
+836,Dog,House,0,High,Experienced,163.03
+837,Rabbit,Apartment,0,Low,Some,256.25
+838,Cat,Small Space,0,Moderate,None,73.48
+839,Cat,Apartment,0,Low,Experienced,181.07
+840,Rabbit,Apartment,0,Moderate,Experienced,243.78
+841,Rabbit,Small Space,0,Low,None,255.53
+842,Dog,House,0,Moderate,Experienced,250.24
+843,Rabbit,House,0,Moderate,Some,222.11
+844,Cat,Apartment,0,Low,Some,185.32
+845,Dog,House,0,Low,Experienced,240.35
+846,Dog,House,0,Moderate,Experienced,128.54
+847,Cat,Apartment,0,Moderate,None,136.65
+848,Dog,Small Space,0,High,None,204.63
+849,Dog,House,1,Moderate,None,212.99
+850,Cat,Apartment,1,Low,Some,63.08
+851,Rabbit,House,0,Moderate,None,234.14
+852,Dog,House,0,Low,Some,257.95
+853,Dog,Apartment,0,High,None,194.2
+854,Rabbit,House,0,High,Some,378.08
+855,Dog,Apartment,0,Moderate,None,148.78
+856,Bird,House,0,Moderate,Experienced,172.92
+857,Cat,House,0,Low,None,170.37
+858,Dog,House,0,Moderate,Some,194.29
+859,Dog,Small Space,1,High,Experienced,175.35
+860,Dog,Apartment,0,Low,Experienced,94.49
+861,Dog,House,0,Low,None,159.01
+862,Dog,House,0,Moderate,None,192.68
+863,Cat,House,0,High,Experienced,292.14
+864,Dog,House,1,Moderate,Some,365.17
+865,Cat,Apartment,0,High,Experienced,300.16
+866,Cat,Apartment,0,Low,Some,141.85
+867,Dog,Apartment,0,Moderate,Some,147.81
+868,Dog,Small Space,1,High,Some,188.05
+869,Dog,Apartment,1,Low,Experienced,333.84
+870,Dog,Small Space,0,Moderate,Experienced,187.59
+871,Rabbit,House,0,Low,None,100.44
+872,Dog,Apartment,0,Low,Some,162.41
+873,Rabbit,House,0,Low,None,256.78
+874,Cat,Small Space,1,High,Some,251.75
+875,Cat,Small Space,0,Moderate,Experienced,184.98
+876,Cat,Apartment,1,High,Some,251.26
+877,Rabbit,Apartment,0,Moderate,Experienced,50.0
+878,Dog,Apartment,1,Moderate,Some,207.79
+879,Dog,Apartment,0,Moderate,Experienced,264.55
+880,Cat,House,1,High,Experienced,137.54
+881,Dog,Small Space,0,High,None,137.27
+882,Cat,Apartment,0,High,None,60.02
+883,Cat,House,0,Low,Some,319.24
+884,Cat,House,0,Moderate,None,145.99
+885,Cat,Apartment,0,Moderate,Some,218.08
+886,Cat,Apartment,1,High,Some,245.29
+887,Rabbit,House,0,Low,Experienced,313.41
+888,Rabbit,Small Space,0,Low,Some,188.46
+889,Cat,House,0,Moderate,Experienced,159.54
+890,Cat,Apartment,1,Low,Experienced,212.98
+891,Rabbit,Apartment,0,Low,Experienced,296.31
+892,Cat,Apartment,0,High,None,187.24
+893,Cat,House,0,Moderate,Some,128.38
+894,Rabbit,House,0,High,Some,84.44
+895,Cat,Apartment,0,High,Some,108.4
+896,Dog,Small Space,0,Low,Some,264.83
+897,Rabbit,House,0,Moderate,Experienced,175.95
+898,Dog,House,0,Low,Some,154.44
+899,Rabbit,Small Space,0,High,Some,146.3
+900,Rabbit,Apartment,0,Moderate,Experienced,206.38
+901,Bird,Small Space,0,Moderate,None,182.04
+902,Dog,Apartment,0,Moderate,Some,179.52
+903,Cat,Apartment,0,Moderate,Experienced,301.2
+904,Cat,Small Space,0,Low,None,315.35
+905,Dog,Small Space,0,Moderate,Some,79.25
+906,Dog,House,0,High,None,224.57
+907,Cat,House,0,High,Experienced,141.74
+908,Cat,House,0,Moderate,Some,181.38
+909,Dog,Small Space,0,Moderate,Some,223.2
+910,Cat,Apartment,0,High,Some,184.05
+911,Rabbit,Small Space,1,Low,None,217.28
+912,Rabbit,House,0,High,None,250.47
+913,Bird,House,0,Low,Some,222.09
+914,Cat,House,0,Moderate,Some,151.49
+915,Bird,House,0,Moderate,Some,152.81
+916,Rabbit,Small Space,0,Moderate,Some,92.02
+917,Dog,House,0,High,Some,135.96
+918,Dog,Small Space,1,Low,Some,347.16
+919,Cat,Apartment,0,Moderate,Some,140.6
+920,Cat,House,0,Moderate,None,110.5
+921,Cat,Small Space,0,High,Experienced,223.99
+922,Cat,House,0,Low,Experienced,191.72
+923,Rabbit,House,0,High,None,185.33
+924,Cat,House,0,Moderate,Some,305.68
+925,Dog,Small Space,0,Low,Some,241.18
+926,Rabbit,Small Space,0,High,Some,160.25
+927,Dog,Apartment,1,Low,Some,168.16
+928,Bird,Small Space,0,Moderate,None,162.31
+929,Dog,House,0,Low,Experienced,265.61
+930,Bird,Apartment,0,Moderate,None,176.89
+931,Dog,Small Space,0,Moderate,Some,65.51
+932,Dog,House,1,Moderate,Experienced,196.38
+933,Dog,Small Space,0,Moderate,Some,84.72
+934,Rabbit,Apartment,0,Moderate,None,363.82
+935,Rabbit,Apartment,0,Low,Experienced,127.57
+936,Cat,House,0,Moderate,Experienced,187.86
+937,Bird,Apartment,0,High,Experienced,219.37
+938,Cat,House,0,High,Some,178.35
+939,Cat,Apartment,1,Low,None,178.25
+940,Rabbit,House,1,Low,Experienced,231.64
+941,Dog,Apartment,0,High,Some,314.47
+942,Dog,Apartment,0,Moderate,Experienced,257.56
+943,Bird,House,0,Moderate,Some,310.89
+944,Bird,Apartment,0,High,Some,121.5
+945,Bird,House,0,Moderate,Experienced,223.8
+946,Bird,Small Space,0,Moderate,Some,211.64
+947,Dog,House,0,High,None,226.33
+948,Rabbit,Small Space,0,Moderate,None,303.22
+949,Cat,Apartment,1,Low,Some,183.44
+950,Bird,Apartment,1,Low,None,169.59
+951,Cat,Small Space,0,Low,Some,240.05
+952,Cat,House,1,High,Some,66.63
+953,Cat,House,0,Low,Experienced,182.24
+954,Dog,House,0,Low,Some,189.94
+955,Dog,House,0,High,Experienced,130.97
+956,Rabbit,Apartment,0,Low,None,279.28
+957,Rabbit,House,1,Low,Some,120.33
+958,Dog,House,0,Low,None,189.81
+959,Rabbit,House,1,Low,Experienced,221.99
+960,Cat,Small Space,0,Moderate,Experienced,301.51
+961,Cat,Apartment,0,High,Experienced,199.21
+962,Dog,Apartment,0,High,Some,270.21
+963,Rabbit,Small Space,0,Moderate,Some,252.54
+964,Rabbit,House,0,Moderate,Experienced,209.26
+965,Cat,House,0,Moderate,Experienced,118.29
+966,Cat,Apartment,0,Low,Experienced,92.41
+967,Dog,Apartment,0,Low,Some,207.99
+968,Cat,House,0,High,Experienced,159.3
+969,Dog,Apartment,0,Low,None,268.94
+970,Dog,Small Space,0,Low,None,255.94
+971,Cat,Small Space,0,Moderate,None,186.15
+972,Bird,Small Space,0,Moderate,None,113.17
+973,Cat,Apartment,1,Low,Experienced,238.31
+974,Dog,House,0,Low,Experienced,123.65
+975,Cat,Apartment,0,Moderate,Experienced,143.12
+976,Rabbit,Apartment,1,Moderate,Some,126.54
+977,Rabbit,Apartment,1,Low,Some,189.61
+978,Rabbit,Apartment,1,Moderate,Experienced,287.76
+979,Cat,Small Space,0,Moderate,Some,199.62
+980,Rabbit,Apartment,0,High,Experienced,166.76
+981,Dog,Apartment,0,Moderate,Some,85.58
+982,Dog,Small Space,0,Low,Some,241.41
+983,Dog,Apartment,1,Moderate,Some,141.47
+984,Cat,House,0,High,Experienced,208.81
+985,Bird,Apartment,0,Low,None,173.43
+986,Rabbit,Apartment,0,Moderate,Some,262.86
+987,Dog,Small Space,0,Low,Experienced,188.21
+988,Dog,Apartment,0,Low,Some,195.58
+989,Dog,House,0,Moderate,Experienced,236.43
+990,Dog,Apartment,1,Low,Some,358.02
+991,Cat,Apartment,1,High,Some,266.63
+992,Bird,Apartment,0,Moderate,Experienced,193.35
+993,Bird,Apartment,0,Moderate,Some,200.24
+994,Cat,Apartment,0,Moderate,Some,160.64
+995,Rabbit,House,0,Moderate,Some,128.75
+996,Cat,House,1,Low,None,158.54
+997,Dog,Apartment,0,High,Some,142.09
+998,Cat,House,0,High,None,249.0
+999,Cat,Small Space,0,Low,Experienced,119.66
+1000,Rabbit,Small Space,0,Low,Experienced,299.99
