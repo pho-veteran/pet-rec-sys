@@ -10,19 +10,23 @@ def generate_pet_data(num_pets=2000):
     breeds = {
         'Dog': [
             'Labrador', 'Poodle', 'Bulldog', 'Beagle', 'German Shepherd',
-            'Golden Retriever', 'Rottweiler', 'Dachshund', 'Boxer', 'Siberian Husky'
+            'Golden Retriever', 'Rottweiler', 'Dachshund', 'Boxer', 'Siberian Husky',
+            'Pomeranian', 'Shih Tzu', 'Yorkshire Terrier', 'Chihuahua', 'Australian Shepherd'
         ],
         'Cat': [
             'Persian', 'Maine Coon', 'Siamese', 'Tabby', 'Sphynx',
-            'Bengal', 'Ragdoll', 'Abyssinian', 'British Shorthair', 'Scottish Fold'
+            'Bengal', 'Ragdoll', 'Abyssinian', 'British Shorthair', 'Scottish Fold',
+            'Russian Blue', 'Birman', 'Oriental Shorthair', 'Manx', 'American Shorthair'
         ],
         'Rabbit': [
             'Holland Lop', 'Netherland Dwarf', 'Flemish Giant', 'Lionhead',
-            'Mini Rex', 'Angora', 'English Lop', 'Dutch', 'Havana'
+            'Mini Rex', 'Angora', 'English Lop', 'Dutch', 'Havana',
+            'Californian', 'New Zealand', 'Rex', 'Mini Lop', 'Polish'
         ],
         'Bird': [
             'Parakeet', 'Cockatiel', 'Canary', 'Lovebird',
-            'African Grey', 'Macaw', 'Conure', 'Finch', 'Quaker Parrot'
+            'African Grey', 'Macaw', 'Conure', 'Finch', 'Quaker Parrot',
+            'Amazon Parrot', 'Eclectus Parrot', 'Pionus Parrot', 'Caique', 'Budgerigar'
         ]
     }
     sizes = ['Small', 'Medium', 'Large']
@@ -78,60 +82,92 @@ def generate_user_data(num_users=500):
     return user_df
 
 def generate_adoption_history(user_df, pet_df, num_adoptions=25000, preference_weight=0.7):
-    """Generate adoption_history.csv with preference-driven adoptions."""
+    """Generate adoption_history.csv with preference-driven adoptions, ensuring each pet is adopted at most once."""
     adoptions = []
     user_prefs = user_df.set_index('UserID').to_dict()['PreferredPetType']
-    pet_types = pet_df.set_index('PetID').to_dict()['PetType']
+    pet_types_map = pet_df.set_index('PetID').to_dict()['PetType']
     user_max_fees = user_df.set_index('UserID').to_dict()['MaxAdoptionFee']
-    pet_fees = pet_df.set_index('PetID').to_dict()['AdoptionFee']
+    pet_fees_map = pet_df.set_index('PetID').to_dict()['AdoptionFee']
 
-    # Ensure every user has at least 2 adoptions (cold start mitigation)
+    available_pet_ids = set(pet_df['PetID'])
+    
+    # Cap num_adoptions to the number of available pets
+    num_adoptions = min(num_adoptions, len(pet_df))
+
+    # Ensure every user has at least 2 adoptions (cold start mitigation) if possible
     for user_id in user_df['UserID']:
-        preferred_type = user_prefs[user_id]
-        max_fee = user_max_fees[user_id]
-        matching_pets = [
-            pid for pid in pet_df['PetID']
-            if pet_types[pid] == preferred_type and pet_fees[pid] <= max_fee
-        ]
-        if matching_pets:
-            num_initial = np.random.randint(2, 4)  # 2–3 initial adoptions
-            selected_pets = np.random.choice(matching_pets, size=min(num_initial, len(matching_pets)), replace=False)
-            for pet_id in selected_pets:
-                adoptions.append({'UserID': user_id, 'PetID': pet_id})
-
-    # Generate remaining adoptions
-    while len(adoptions) < num_adoptions:
-        user_id = np.random.choice(user_df['UserID'])
+        if len(adoptions) >= num_adoptions or not available_pet_ids:
+            break 
         preferred_type = user_prefs[user_id]
         max_fee = user_max_fees[user_id]
         
-        # Filter affordable pets
-        affordable_pets = [pid for pid in pet_df['PetID'] if pet_fees[pid] <= max_fee]
-        if not affordable_pets:
+        # Find suitable, unadopted pets
+        potential_pets_for_user = [
+            pid for pid in available_pet_ids
+            if pet_types_map[pid] == preferred_type and pet_fees_map[pid] <= max_fee
+        ]
+        
+        if potential_pets_for_user:
+            num_initial = np.random.randint(2, 4)  # Try for 2–3 initial adoptions
+            selected_count = 0
+            for _ in range(num_initial):
+                if not potential_pets_for_user or len(adoptions) >= num_adoptions:
+                    break
+                pet_id_to_adopt = np.random.choice(potential_pets_for_user)
+                adoptions.append({'UserID': user_id, 'PetID': pet_id_to_adopt})
+                available_pet_ids.remove(pet_id_to_adopt)
+                potential_pets_for_user.remove(pet_id_to_adopt) # Remove from local list for this user's initial batch
+                selected_count +=1
+                if not available_pet_ids: # No more pets anywhere
+                    break
+            if not available_pet_ids and len(adoptions) >= num_adoptions:
+                 break
+
+
+    # Generate remaining adoptions
+    user_ids_list = list(user_df['UserID']) # For efficient random choice
+    while len(adoptions) < num_adoptions and available_pet_ids:
+        user_id = np.random.choice(user_ids_list)
+        preferred_type = user_prefs[user_id]
+        max_fee = user_max_fees[user_id]
+        
+        # Filter affordable and available pets
+        affordable_available_pets = [
+            pid for pid in available_pet_ids if pet_fees_map[pid] <= max_fee
+        ]
+        if not affordable_available_pets:
             continue
         
         # Prefer matching pets
-        matching_pets = [pid for pid in affordable_pets if pet_types[pid] == preferred_type]
-        non_matching_pets = [pid for pid in affordable_pets if pet_types[pid] != preferred_type]
+        matching_pets = [pid for pid in affordable_available_pets if pet_types_map[pid] == preferred_type]
+        non_matching_pets = [pid for pid in affordable_available_pets if pet_types_map[pid] != preferred_type]
         
+        pet_id_to_adopt = None
         if np.random.random() < preference_weight and matching_pets:
-            pet_id = np.random.choice(matching_pets)
+            pet_id_to_adopt = np.random.choice(matching_pets)
         elif non_matching_pets:
-            pet_id = np.random.choice(non_matching_pets)
-        else:
+            pet_id_to_adopt = np.random.choice(non_matching_pets)
+        elif matching_pets: # Fallback if random chance missed but matching exist
+            pet_id_to_adopt = np.random.choice(matching_pets)
+        else: # No suitable pet for this user at this time
             continue
         
-        adoptions.append({'UserID': user_id, 'PetID': pet_id})
+        if pet_id_to_adopt:
+            adoptions.append({'UserID': user_id, 'PetID': pet_id_to_adopt})
+            available_pet_ids.remove(pet_id_to_adopt)
 
     adoption_df = pd.DataFrame(adoptions)
-    # Remove duplicates
+    # Remove duplicates (should be minimal with new logic, but good for safety)
     initial_len = len(adoption_df)
     adoption_df = adoption_df.drop_duplicates(subset=['UserID', 'PetID'], keep='first')
-    print(f"Removed {initial_len - len(adoption_df)} duplicate adoptions")
+    # Ensure PetID is unique in adoptions (primary constraint)
+    adoption_df = adoption_df.drop_duplicates(subset=['PetID'], keep='first')
     
-    # Trim to target size if overshot
+    print(f"Removed {initial_len - len(adoption_df)} duplicate or already-adopted-pet entries")
+    
+    # Trim to target size if overshot (less likely now, but as a safeguard)
     if len(adoption_df) > num_adoptions:
-        adoption_df = adoption_df.sample(num_adoptions, random_state=42)
+        adoption_df = adoption_df.sample(n=num_adoptions, random_state=42)
     
     # Validate foreign keys
     invalid_adoptions = adoption_df[
@@ -159,6 +195,8 @@ def validate_datasets(pet_df, user_df, adoption_df):
         raise ValueError("Duplicate UserID found")
     if adoption_df.duplicated(subset=['UserID', 'PetID']).any():
         raise ValueError("Duplicate UserID-PetID pairs found")
+    if adoption_df['PetID'].duplicated().any():
+        raise ValueError("Duplicate PetID found in adoptions - a pet was adopted more than once")
     
     # Check matrix density
     density = len(adoption_df) / (len(user_df) * len(pet_df)) * 100
@@ -185,9 +223,10 @@ def main():
     print("Generating datasets...")
     
     # Generate datasets
-    pet_df = generate_pet_data(num_pets=1000)
-    user_df = generate_user_data(num_users=1000)
-    adoption_df = generate_adoption_history(user_df, pet_df, num_adoptions=25000)
+    pet_df = generate_pet_data(num_pets=20000) # Increased
+    user_df = generate_user_data(num_users=10000) # Increased
+    # num_adoptions will be capped by num_pets if it's higher
+    adoption_df = generate_adoption_history(user_df, pet_df, num_adoptions=15000) # Increased
     
     # Validate
     validate_datasets(pet_df, user_df, adoption_df)
